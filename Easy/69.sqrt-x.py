@@ -1,0 +1,28 @@
+#
+# @lc app=leetcode id=69 lang=python3
+#
+# [69] Sqrt(x)
+#
+
+
+# @lc code=start
+class Solution:
+    def mySqrt(self, x: int) -> int:
+        first, last = 1, x
+
+        while first <= last:
+            mid = first + (last - first) // 2
+
+            if mid == x // mid:
+                return mid
+
+            elif mid > x // mid:
+                last = mid - 1
+
+            else:
+                first = mid + 1
+
+        return last
+
+
+# @lc code=end
